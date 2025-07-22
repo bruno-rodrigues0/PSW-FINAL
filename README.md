@@ -83,11 +83,6 @@ python3 manage.py migrate
 python3 manage.py runserver
 ```
 
-
-```
-```
-```
-```
 ---
 ## Video
 #### Confira no link abaixo uma apresentação do sistema:
