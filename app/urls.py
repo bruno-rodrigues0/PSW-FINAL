@@ -19,4 +19,10 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('community/', include('community.urls')),
+    path('post/', include('post.urls')),
+    path('comments/', include('comments.urls')),
+    path('topics/', include('topics.urls')),
+    path('questions/', include('questions.urls')),
+    path('auth/', include('django.contrib.auth.urls'))
 ]
