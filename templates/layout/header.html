@@ -1,0 +1,13 @@
+{% load static %}
+<header id="header" class="header d-flex align-items-center sticky-top">
+      <div class="container-fluid container-xl position-relative d-flex align-items-center">
+        <a href="{% url 'index' %}" class="logo d-flex align-items-center me-auto">
+          {% comment %} <img src="{% static 'img/logo.png' %}" alt="" /> {% endcomment %}
+          <h1 class="sitename">Xtudent</h1>
+        </a>
+
+        {% include 'layout/navbar.html' %}
+
+        <a class="btn-getstarted" href="{% url 'index' %}">Get Started</a>
+      </div>
+    </header>
