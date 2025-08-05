@@ -5,7 +5,11 @@ def index(request):
     """
     Render the home page.
     """
-    return render(request, 'index.html')
+    context = {
+        'page_title': 'Home',
+        'page_description': 'Welcome to Xtundent, your go-to platform for online learning and professional development.'
+    }
+    return render(request, 'index.html', context)
 
 
 def about(request):
@@ -35,7 +39,7 @@ def trainers(request):
     Render the trainers page.
     """
     context = {
-        'page_title': 'Our Trainers',
+        'page_title': 'Trainers',
         'page_description': 'Meet our team of experienced and passionate trainers who are dedicated to helping you achieve your learning goals. Each trainer brings years of industry experience and expertise.'
     }
     return render(request, 'pages/trainers.html', context)

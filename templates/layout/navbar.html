@@ -1,20 +1,19 @@
 <nav id="navmenu" class="navmenu">
   <ul>
     <li>
-      <a href="{% url 'index' %}" class="active">Home<br /></a>
-      {% comment %} achar logica para poder deixar a aba ativa dinamicamente {% endcomment %}
+      <a href="{% url 'index' %}" {% if request.resolver_match.url_name == 'index' %}class="active"{% endif %}>Home<br /></a>
     </li>
     <li>
-      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'about' %}" {% if request.resolver_match.url_name == 'about' %}class="active"{% endif %}>About</a>
     </li>
     <li>
-      <a href="{% url 'courses' %}">Courses</a>
+      <a href="{% url 'courses' %}" {% if request.resolver_match.url_name == 'courses' %}class="active"{% endif %}>Courses</a>
     </li>
     <li>
-      <a href="{% url 'trainers' %}">Trainers</a>
+      <a href="{% url 'trainers' %}" {% if request.resolver_match.url_name == 'trainers' %}class="active"{% endif %}>Trainers</a>
     </li>
     <li>
-      <a href="{% url 'events' %}">Events</a>
+      <a href="{% url 'events' %}" {% if request.resolver_match.url_name == 'events' %}class="active"{% endif %}>Events</a>
     </li>
     <li class="dropdown">
       <a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -54,7 +53,7 @@
       </ul>
     </li>
     <li>
-      <a href="{% url 'contact' %}">Contact</a>
+      <a href="{% url 'contact' %}" {% if request.resolver_match.url_name == 'contact' %}class="active"{% endif %}>Contact</a>
     </li>
   </ul>
   <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
