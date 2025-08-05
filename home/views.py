@@ -65,3 +65,13 @@ def contact(request):
         'page_description': 'Get in touch with us for any questions, inquiries, or support. We are here to help you on your learning journey and provide the assistance you need.'
     }
     return render(request, 'pages/contact.html', context)
+
+
+# Admin
+
+def admin_dashboard(request):
+    """
+    Render the admin dashboard.
+    """
+
+    return render(request, 'admin/index.html')
