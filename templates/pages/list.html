@@ -1,0 +1,38 @@
+{% extends "_base.html" %}
+
+{% block content %}
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title fw-semibold mb-4">Comunidades</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nome</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for community in communities %}
+              <tr>
+                <td>{{ community.id }}</td>
+                <td>{{ community.name }}</td>
+                <td>
+                  <a href="{% url 'community:community_detail' community.id %}" class="btn btn-info">Ver</a>
+                  <a href="{% url 'community:community_update' community.id %}" class="btn btn-warning">Editar</a>
+                  <a href="{% url 'community:community_delete' community.id %}" class="btn btn-danger">Excluir</a>
+                </td>
+              </tr>
+            {% empty %}
+              <tr>
+                <td colspan="3">Nenhuma comunidade encontrada.</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <a href="{% url 'community:community_create' %}" class="btn btn-primary">Nova Comunidade</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

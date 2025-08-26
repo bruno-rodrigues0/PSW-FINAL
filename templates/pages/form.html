@@ -1,0 +1,21 @@
+{% extends '_base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+  <!-- Main Content -->
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title fw-semibold mb-4">{{ title }}</h1>
+        <form method="post">
+          {% csrf_token %}
+          {% for field in form %}
+            <div class="mb-3">{{ field.label_tag }}
+              {{ field|add_class:'form-control' }}</div>
+          {% endfor %}
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

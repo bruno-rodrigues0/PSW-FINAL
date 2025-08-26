@@ -13,7 +13,7 @@ def community_list(request):
     context = {
         'communities': communities
     }
-    return render(request, 'community/community_list.html', context)
+    return render(request, 'pages/list.html', context)
 
 
 def community_detail(request, pk):
@@ -24,10 +24,10 @@ def community_detail(request, pk):
     context = {
         'community': community
     }
-    return render(request, 'community/community_detail.html', context)
+    return render(request, 'pages/detail.html', context)
 
 
-@login_required
+# @login_required
 def community_create(request):
     """
     Cria uma nova comunidade
@@ -47,10 +47,10 @@ def community_create(request):
         'form': form,
         'title': 'Nova Comunidade'
     }
-    return render(request, 'community/community_form.html', context)
+    return render(request, 'pages/form.html', context)
 
 
-@login_required
+# @login_required
 def community_update(request, pk):
     """
     Atualiza uma comunidade existente
@@ -77,10 +77,10 @@ def community_update(request, pk):
         'community': community,
         'title': 'Editar Comunidade'
     }
-    return render(request, 'community/community_form.html', context)
+    return render(request, 'pages/form.html', context)
 
 
-@login_required
+# @login_required
 def community_delete(request, pk):
     """
     Deleta uma comunidade
@@ -101,4 +101,4 @@ def community_delete(request, pk):
     context = {
         'community': community
     }
-    return render(request, 'community/community_confirm_delete.html', context)
+    return render(request, 'community/delete.html', context)
