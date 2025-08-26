@@ -3,9 +3,9 @@ from . import views
 
 app_name = "comments"
 urlpatterns = [
-    path("", views.index, name="index"),
-    path("create/", views.create, name="create"),
-    path("update/<int:id_comment>", views.update, name="update"),
-    path("delete/<int:id_comment>", views.delete, name="delete"),
-    path("detail/<int:id_comment>", views.detail, name="detail"),
+    path("", views.comment_list, name="comment_list"),
+    path("create/", views.comment_create, name="comment_create"),
+    path("<int:pk>/", views.comment_detail, name="comment_detail"),
+    path("<int:pk>/edit/", views.comment_update, name="comment_update"),
+    path("<int:pk>/delete/", views.comment_delete, name="comment_delete"),
 ]
